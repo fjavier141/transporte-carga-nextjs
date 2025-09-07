@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm ci
+      - run: npm install
 
       # Activa modo Pages y setea base path (SIN slash inicial)
       - run: echo "GITHUB_PAGES=true" >> $GITHUB_ENV
