@@ -1,0 +1,16 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 16px;
+}
+
+body {
+  @apply bg-white text-gray-900 antialiased;
+}
+
+.container {
+  @apply mx-auto px-4 sm:px-6 lg:px-8;
+}

@@ -1,0 +1,10 @@
+<svg width="160" height="40" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="400" height="100" fill="white"/>
+  <g>
+    <rect x="10" y="20" width="60" height="60" rx="8" fill="#0f766e"/>
+    <path d="M25 65 L40 35 L55 65 Z" fill="white"/>
+  </g>
+  <text x="90" y="65" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#0f766e">
+    Transportes Latorre
+  </text>
+</svg>
