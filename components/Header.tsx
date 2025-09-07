@@ -1,7 +1,7 @@
-
 "use client"
 import Image from "next/image"
 import Link from "next/link"
+import { prefix } from "@/lib/prefix"
 
 export default function Header() {
   const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP
@@ -10,7 +10,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
       <div className="container flex items-center justify-between h-16">
         <div className="flex items-center gap-3">
-          <Image src="/logo.svg" alt="Transportes Latorre" width={140} height={40} />
+          <Image src={`${prefix}/logo.svg`} alt="Transportes Latorre" width={140} height={40} />
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm">
           <Link href="#servicios" className="hover:text-brand">Servicios</Link>
