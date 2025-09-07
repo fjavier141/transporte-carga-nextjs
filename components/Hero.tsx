@@ -2,7 +2,7 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
-
+import { prefix } from "@/lib/prefix"
 
 export default function Hero() {
   const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP
@@ -45,7 +45,7 @@ export default function Hero() {
           {/* Columna imagen */}
           <div className="relative">
             <Image
-              src="/camion.jpg"  // <-- sube esta imagen a /public
+              src={`${prefix}/camion.jpg`}  // <-- sube esta imagen a /public
               alt="Camión de carga en ruta — Transportes Latorre"
               width={1200}
               height={800}
