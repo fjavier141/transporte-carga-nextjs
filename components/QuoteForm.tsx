@@ -8,6 +8,30 @@ export default function QuoteForm() {
   const [state, setState] = useState<FormState>("idle")
   const [msg, setMsg] = useState<string>("")
 
+  const isStatic = process.env.NEXT_PUBLIC_STATIC_DEPLOY === "true"
+
+  if (isStatic) {
+    // Versión solo para feedback
+    return (
+      <section id="cotizar" className="container py-16">
+        <h2 className="text-3xl md:text-4xl font-bold">Solicitar cotización</h2>
+        <p className="text-gray-700 mt-2 max-w-2xl">
+          Esta demo en GitHub Pages es estática. Escríbenos directo por WhatsApp o correo y te cotizamos al tiro.
+        </p>
+        <div className="mt-6 flex flex-col sm:flex-row gap-4">
+          <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || ""}?text=Hola%20quiero%20cotizar%20un%20transporte`}
+             className="px-6 py-3 rounded-xl bg-brand text-white font-medium hover:bg-brand-dark transition">
+            WhatsApp
+          </a>
+          <a href="mailto:ventas@tu-dominio.cl?subject=Cotizaci%C3%B3n%20transporte&body=Hola,%20quiero%20cotizar%20un%20env%C3%ADo..."
+             className="px-6 py-3 rounded-xl border font-medium hover:bg-gray-50 transition">
+            Enviar correo
+          </a>
+        </div>
+      </section>
+    )
+  }
+
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setState("sending")
